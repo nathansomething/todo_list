@@ -1,0 +1,20 @@
+h1 {
+  margin: 5vh 0;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+div.col-md-3 {
+  padding-left: 50px;
+}
+
+tr.task-row:hover{
+  cursor: pointer;
+  background-color: #CCC;
+}
+
+tr.completed {
+  color: #999;
+}
