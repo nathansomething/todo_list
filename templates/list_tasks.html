@@ -1,0 +1,29 @@
+<h2>Task List</h2>
+<table id="task-table" class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Date Uploaded</th>
+      <th>Due Date</th>
+      <th>Is Completed</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for task in tasks %}
+    <tr class="task-row" data-id="{{task.id}}">
+      <td>{{task.name}}</td>
+      <td>{{task.description}}></td>
+      <td>{{task.uploaded_date}}></td>
+      <td>{{task.due_date}}></td>
+      <td class="is_completed">
+        {% if task.is_completed %}
+          Yes
+        {% else %}
+          No
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
