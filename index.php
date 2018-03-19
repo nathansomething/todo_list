@@ -13,15 +13,17 @@
   <body div class="container">
     <p>
       <?php
+        require_once("root.php");
         require_once("task.php");
         require_once("database.php");
         $db = new Database();
         $db->setup();
+        $template = $twig->load('list_tasks.html');
       ?>
     </p>
     <h1 class="text-center">Todo List Application</h1>
     <div class="row">
-      <div class="col-md-8"><?php require_once("list_tasks.php"); ?></div>
+      <div class="col-md-8"><?php echo $template->render(array('tasks' => $db->get_tasks())) ?></div>
       <div class="col-md-4"><?php require_once("new_task.php"); ?></div>
     </div>
     <button id="remove-button" class="btn btn-primary">Remove All Tasks</button>
